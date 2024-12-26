@@ -1,0 +1,79 @@
+﻿<Window x:Class="ConverterApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Конвертер" Height="1079" Width="1919"
+        Background="#F0F0F0">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+
+    
+        <StackPanel Grid.Column="0" Margin="10">
+           
+            <GroupBox Header="Меню" Margin="0,0,0,10">
+                <StackPanel>
+                    <Button x:Name="btnMeasures" Content="Величины" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnCurrency" Content="Валюты" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnCrypto" Content="Криптовалюты" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnTime" Content="Время" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnHistory" Content="История операций" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnExit" Content="Выход" Height="30" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+
+            
+            <GroupBox Header="Конвертация" Margin="0,0,0,10">
+                <StackPanel>
+                    <Label Content="Введите значение:"/>
+                    <TextBox x:Name="txtInput" Height="30" Margin="0,5"/>
+                    <Label Content="Выберите тип конвертации:"/>
+                    <ComboBox x:Name="cmbConversionType" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnConvert" Content="Конвертировать" Height="30" Margin="0,5"/>
+                    <TextBlock x:Name="txtResult" Text="Результат: " Height="30" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Column="1" Margin="10,10,10,10">
+         
+            <GroupBox Header="Избранные конвертации" Margin="0,0,0,10" Height="218" Width="939">
+                <StackPanel Margin="0,0,190,0" Height="193">
+                    <ListBox x:Name="lstFavorites" Height="91" Margin="0,5" Width="929"/>
+                    <Button x:Name="btnAddToFavorites" Content="Добавить в избранное" Height="30"  Margin="0,5"/>
+                    <Button x:Name="btnRemoveFromFavorites" Content="Удалить из избранного" Height="30" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+
+            
+            <GroupBox Header="Пользовательские курсы" Margin="0,0,0,10">
+                <StackPanel>
+                    <Label Content="Сохраненные курсы:"/>
+                    <ComboBox x:Name="cmbCustomRates" Height="30" Margin="0,5"/>
+                    <Label Content="Новый курс:"/>
+                    <TextBox x:Name="txtCustomRate" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnSaveRate" Content="Сохранить курс" Height="30" Margin="0,5"/>
+                    <Button x:Name="btnDeleteRate" Content="Удалить курс" Height="30" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+
+            
+            <GroupBox Header="История операций">
+                <ListBox x:Name="lstHistory" Height="150" Margin="0,5"/>
+            </GroupBox>
+        </StackPanel>
+        <Button x:Name="btnProfile" 
+                Content="Профиль" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Width="80" 
+                Height="40" 
+                Margin="0,33,15,0" 
+                Grid.Column="1"
+                FontSize="14"/>
+    </Grid>
+</Window>
